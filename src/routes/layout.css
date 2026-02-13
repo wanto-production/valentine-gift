@@ -1,1 +1,256 @@
 @import 'tailwindcss';
+
+@theme {
+  /* Colors */
+  --color-primary: #C2185B;  /* Lebih gelap dari sebelumnya */
+  --color-primary-light: #F48FB1;
+  --color-primary-dark: #880E4F;
+  --color-primary-hover: #AD1457;
+  
+  --color-accent: #D81B60;  /* Lebih gelap */
+  --color-accent-light: #F06292;
+  
+  --color-white: #FFFFFF;
+  --color-off-white: #FAFAFA;
+  --color-light-gray: #F5F5F5;
+  --color-gray: #9E9E9E;
+  --color-dark-gray: #424242;
+  --color-black: #212121;
+  
+  /* Extend Tailwind's color palette - Pink lebih gelap untuk text */
+  --color-pink-50: #FCE4EC;
+  --color-pink-100: #F8BBD0;
+  --color-pink-200: #F48FB1;
+  --color-pink-300: #F06292;
+  --color-pink-400: #EC407A;
+  --color-pink-500: #E91E63;
+  --color-pink-600: #D81B60;
+  --color-pink-700: #C2185B;
+  --color-pink-800: #AD1457;
+  --color-pink-900: #880E4F;
+  
+  /* Text Colors - Pink gelap untuk readability */
+  --color-pink: #AD1457;  /* Pink gelap untuk text */
+  --color-pink-light: #C2185B;  /* Sedikit lebih terang */
+  --color-pink-dark: #880E4F;  /* Paling gelap */
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-pink-sm: 0 2px 4px rgb(233 30 99 / 0.1);
+  --shadow-pink-md: 0 4px 12px rgb(233 30 99 / 0.15);
+  --shadow-pink-lg: 0 8px 24px rgb(233 30 99 / 0.2);
+  --shadow-pink-xl: 0 12px 32px rgb(233 30 99 / 0.25);
+  
+  /* Typography */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-base: 250ms;
+  --transition-slow: 350ms;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  /* Gradients */
+  .bg-gradient-valentine {
+    background: linear-gradient(135deg, #F8BBD0 0%, #E91E63 100%);
+  }
+  
+  .bg-gradient-valentine-soft {
+    background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%);
+  }
+
+  .bg-gradient-valentine-animated {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+  }
+  
+  /* Text gradient lebih gelap */
+  .text-gradient-valentine {
+    background: linear-gradient(135deg, #C2185B 0%, #880E4F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Shadows */
+  .shadow-pink-glow {
+    box-shadow: 0 0 20px rgb(233 30 99 / 0.3);
+  }
+
+  .shadow-glow-pink {
+    box-shadow:
+      0 0 30px rgba(236, 72, 153, 0.4),
+      0 20px 60px -15px rgba(236, 72, 153, 0.5);
+  }
+
+  .shadow-glow-gray {
+    box-shadow: 0 20px 60px -15px rgba(107, 114, 128, 0.5);
+  }
+
+  /* Glass effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Text effects */
+  .text-glow {
+    text-shadow:
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 182, 193, 0.6);
+  }
+
+  /* Animations */
+  .animate-float-up {
+    animation: float-up 4s ease-in-out forwards;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .animate-gradient {
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  /* Button styles */
+  .btn-valentine-custom {
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-valentine-outline-custom {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: white;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .btn-valentine {
+    @apply bg-pink-500 text-white px-6 py-3 rounded-lg 
+           shadow-pink-md hover:bg-pink-600 hover:shadow-pink-lg
+           transition-all duration-[250ms] ease-in-out;
+  }
+  
+  .btn-valentine-outline {
+    @apply border-2 border-pink-700 text-pink-dark px-6 py-3 rounded-lg
+           hover:bg-pink-700 hover:text-white
+           transition-all duration-[250ms] ease-in-out;
+  }
+  
+  .card-valentine {
+    @apply bg-white border border-pink-100 rounded-xl p-6
+           shadow-pink-sm hover:shadow-pink-md
+           transition-shadow duration-[250ms];
+  }
+  
+  .input-valentine {
+    @apply border-2 border-pink-200 rounded-lg px-4 py-2
+           text-pink-dark placeholder:text-pink-300
+           focus:border-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-200
+           transition-all duration-[150ms];
+  }
+
+  /* Heading dengan pink gelap */
+  .heading-valentine {
+    @apply text-pink-dark font-bold;
+  }
+
+  /* Paragraph dengan pink gelap */
+}
+
+/* Keyframe animations */
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
