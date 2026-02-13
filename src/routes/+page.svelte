@@ -67,7 +67,7 @@
 	<title>A Valentine's Question ❤️</title>
 	<meta name="description" content="A special valentine's question for a special someone." />
 	<meta property="og:title" content="Will you be my Valentine?" />
-	<meta property="og:description" content="A special question for someone special ❤️" />
+	<meta property="og:description" content="A special question for Hana❤️" />
 	<meta name="theme-color" content="#e73c7e" />
 </svelte:head>
 
