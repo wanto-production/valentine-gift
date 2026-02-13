@@ -102,7 +102,7 @@
 				<div class="glass mb-6 w-full rounded-3xl p-8">
 					<img
 						src="/assets/cat_dance.gif"
-						class="animate-pulse-slow mx-auto size-64 rounded-2xl shadow-2xl"
+						class="animate-pulse-slow mx-auto rounded-2xl shadow-2xl sm:size-64"
 						alt="happy cat"
 					/>
 					<h1 class="text-glow mt-8 mb-4 text-4xl font-bold text-white md:text-5xl">YAY! 🎉</h1>
@@ -128,7 +128,7 @@
 				<div class="glass mb-8 w-full rounded-3xl p-8">
 					<img
 						src="/assets/cat_heart.gif"
-						class="animate-pulse-slow mx-auto mb-6 size-48 rounded-2xl shadow-2xl md:size-64"
+						class="animate-pulse-slow mx-auto mb-6 size-10 rounded-2xl shadow-2xl sm:size-64"
 						alt="cat with heart"
 					/>
 					<h1 class="text-glow mb-4 text-3xl font-bold text-white md:text-5xl lg:text-6xl">
